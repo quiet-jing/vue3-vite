@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": ["vite/client"],
+    "isolatedModules": false // 应该设置为true 由于Vite不支持类型检查, ts有一些特性并不支持,比如const enum和隐式type-only的导入。Vite推荐在tsconfig.json中开启isolatedModules以便及时得到相关告警。 但是vite 现在对于node_modules里面的错误也会有警告所以暂时置为false
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+}
